@@ -1,0 +1,20 @@
+{
+  "LogLevel" : "trace",
+
+  "FileWriter" : {
+    "On": true,
+
+    "LogPath" : "./src/worker/log/crontab.log.info",
+    "RotateLogPath" : "./src/worker/log/crontab.log.info.%Y%M%D%H",
+
+    "WfLogPath" : "./src/worker/log/crontab.log.wf",
+    "RotateWfLogPath" : "./src/worker/log/crontab.log.wf.%Y%M%D%H",
+
+    "PublicLogPath" : "./src/worker/log/public.log",
+    "RotatePublicLogPath" : "./src/worker/log/public.log.%Y%M%D%H"
+  },
+
+  "ConsoleWriter" : {
+    "On" : false
+  }
+}
