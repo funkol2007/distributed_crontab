@@ -98,10 +98,8 @@ func (sc *Scheduler) trySchedule() (timeAfter time.Duration){
 		if v.NextTime.Before(now)||v.NextTime.Equal(now) {
 			//这里也不能并发操作，我这里开始犯了错误，因为内部有map的写操作。
 			sc.tryStartJob(v)
-			fmt.Println(v.NextTime)
 			//执行完以后需要记录下次执行时间
 			v.NextTime = v.Expr.Next(now)
-			fmt.Println(v.NextTime)
 		}
 		//统计最近要过期的时间
 		if nearestTime == nil || v.NextTime.Before(*nearestTime) {
